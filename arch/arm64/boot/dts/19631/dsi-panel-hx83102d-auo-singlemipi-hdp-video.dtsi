@@ -1,0 +1,103 @@
+/***********************************************************
+** Copyright (C), 2008-2016, OPPO Mobile Comm Corp., Ltd.
+** ODM_WT_EDIT
+** File: - dsi-panel-hx83102d-auo-singlemipi-hdp-video.dtsi
+** Description: source hx83102d auo panel config in kernel
+**
+** Version: 1.0
+** Date : 2019/04/08
+** Author: Hongzhu.Su@ODM_WT.MM.Display.LCD
+**
+** ------------------------------- Revision History: -------------------------------
+**  	<author>		<data> 	   <version >	       <desc>
+**  Hongzhu.Su@ODM_WT      2019/04/08    1.0     source  hx83102d auo panel config in kernel
+**
+****************************************************************/
+&mdss_mdp {
+	dsi_hx83102d_auo_video: qcom,mdss_dsi_hx83102d_auo_video {
+		qcom,mdss-dsi-panel-name =
+			"hx83102d hdp video truly auo panel";
+		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+
+		qcom,mdss-dsi-virtual-channel-id = <0>;
+		qcom,mdss-dsi-stream = <0>;
+		qcom,mdss-dsi-h-left-border = <0>;
+		qcom,mdss-dsi-h-right-border = <0>;
+		qcom,mdss-dsi-v-top-border = <0>;
+		qcom,mdss-dsi-v-bottom-border = <0>;
+		qcom,mdss-dsi-bpp = <24>;
+		qcom,mdss-dsi-color-order = "rgb_swap_rgb";
+		qcom,mdss-dsi-underflow-color = <0xff>;
+		qcom,mdss-dsi-border-color = <0>;
+		qcom,mdss-dsi-h-sync-pulse = <0>;
+		qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
+		qcom,mdss-dsi-lane-map = "lane_map_012";
+		qcom,mdss-dsi-bllp-eof-power-mode;
+		qcom,mdss-dsi-bllp-power-mode;
+		qcom,mdss-dsi-tx-eot-append;
+		qcom,mdss-dsi-lane-0-state;
+		qcom,mdss-dsi-lane-1-state;
+		qcom,mdss-dsi-lane-2-state;
+		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+		qcom,mdss-dsi-mdp-trigger = "none";
+		qcom,mdss-dsi-lp11-init;
+		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+		qcom,mdss-dsi-bl-min-level = <1>;
+		qcom,mdss-dsi-bl-max-level = <4095>;
+		qcom,mdss-dsi-reset-sequence = <1 5>, <0 5>, <1 50>;
+		//qcom,mdss-pan-physical-width-dimension = <65>;
+		//qcom,mdss-pan-physical-height-dimension = <129>;
+
+		qcom,mdss-dsi-display-timings {
+			timing@0 {
+				qcom,mdss-dsi-panel-width = <720>;
+				qcom,mdss-dsi-panel-height = <1520>;
+				qcom,mdss-dsi-h-front-porch = <40>;
+				qcom,mdss-dsi-h-back-porch = <40>;
+				qcom,mdss-dsi-h-pulse-width = <20>;
+				qcom,mdss-dsi-h-sync-skew = <0>;
+				qcom,mdss-dsi-v-back-porch = <12>;
+				qcom,mdss-dsi-v-front-porch = <180>;
+				qcom,mdss-dsi-v-pulse-width = <2>;
+				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-on-command = [
+					39 01 00 00 00 00 04 B9 83 10 2D
+39 01 00 00 00 00 0C B1 20 44 27 27 31 42 50 30 18 18 18
+39 01 00 00 00 00 0F B2 00 00 05 F0 00 0F B4 3D 00 00 00 00 14 20
+39 01 00 00 00 00 0F B4 5F 5A 5F 5F 5F 5A 5F 5A 01 FF 01 20 00 FF
+15 01 00 00 00 00 02 CC 02
+39 01 00 00 05 00 31 D3 11 00 00 00 00 18 00 8F 88 88 88 00 00 00 00 32 10 00 00 00 32 15 FE 05 FE 32 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 16 5F 5A 01 17 5F 5A
+39 01 00 00 05 00 2D D5 18 18 18 18 25 24 25 24 18 18 18 18 2D 2E 2D 2E 09 08 18 18 01 00 0B 0A 03 02 0D 0C 05 04 0F 0E 07 06 21 20 21 20 18 18 18 18 18 18
+39 01 00 00 05 00 2D D6 18 18 18 18 20 21 20 21 2E 2D 2E 2D 18 18 18 18 06 07 18 18 0E 0F 04 05 0C 0D 02 03 0A 0B 00 01 08 09 24 25 24 25 18 18 18 18 18 18
+39 01 00 00 00 00 05 E7 FF 18 00 00
+15 01 00 00 00 00 02 BD 01
+39 01 00 00 00 00 04 E7 01 02 00
+15 01 00 00 00 00 02 BD 00
+39 01 00 00 00 00 04 B6 66 66 E0
+39 01 00 00 05 00 2F E0 00 0D 1B 25 2F 59 75 7D 85 81 9A 9E A1 AF AC B4 BD D1 D2 69 71 7B 7F 00 0D 1B 25 2F 59 75 7D 85 81 9A 9E A1 AF AC B4 BD D1 D2 69 71 7B 7F
+39 01 00 00 00 00 14 BA 71 23 A8 9B B2 80 80 01 10 00 00 00 08 3D 82 77 04 01 00
+15 01 00 00 00 00 02 BD 01
+15 01 00 00 00 00 02 CB 01
+15 01 00 00 00 00 02 BD 00
+39 01 00 00 00 00 06 CB 00 53 00 02 78
+39 01 00 00 00 00 08 BF FC 00 24 9E F6 00 5D
+15 01 00 00 00 00 02 BD 02
+39 01 00 00 00 00 09 B4 42 00 33 00 33 88 B3 00
+39 01 00 00 00 00 04 B1 7F 03 F5
+15 01 00 00 00 00 02 BD 00
+05 01 00 00 00 00 02 35 00
+05 01 00 00 78 00 02 11 00
+05 01 00 00 14 00 02 29 00
+39 01 00 00 05 00 03 51 0F FF
+39 01 00 00 05 00 04 C9 04 08 76
+15 01 00 00 05 00 02 55 01
+15 01 00 00 00 00 02 53 24];
+				qcom,mdss-dsi-off-command = [
+				  05 01 00 00 32 00 02 28 00
+				  05 01 00 00 96 00 02 10 00];
+				qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
+			};
+		};
+	};
+};

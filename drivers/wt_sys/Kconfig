@@ -1,0 +1,25 @@
+#/*************************************************************************
+# * ** Copyright (C), 2008-2016, OPPO Mobile Comm Corp., Ltd.
+# * ** ODM_WT_EDIT
+# * ** File: - Kconfig
+# * ** Description: Add for bootloader log
+# * ** Version: 1.0
+# * ** Date : 2019/04/20
+# * ** Author: Hui.Wang@ODM_WT.BSP.Kernel.Stability
+# * **
+# * ** ------------------- Revision History: -------------------------------
+# * **    <author>       <data>         <version >      <desc>
+# * **    Hui.Wang       2019/04/20     1.0             build this module
+# * **********************************************************************/
+
+config WT_SYSTEM
+	tristate "CONFIG_WT_SYSTEM"
+	default n
+
+config WT_BOOTLOADER_LOG
+	tristate "CONFIG_WT_BOOTLOADER_LOG"
+	default n
+
+config WT_BOOT_REASON
+	tristate "CONFIG_WT_BOOT_REASON"
+	default n

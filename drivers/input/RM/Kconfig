@@ -1,0 +1,18 @@
+#
+# WT ODM RM device configuration
+#
+
+menu "ODM_RM_device"
+
+config ODM_RM
+	bool "WT ODM RM device"
+	help
+	  Say Y here if this project want device info.
+	  If unsure, say N.
+config ODM_RM_DEVICEINFO
+	depends on ODM_RM
+	bool "WT ODM RM deviceinfo"
+	help
+	  Say Y here if this project want device info.
+	  If unsure, say N.
+endmenu
