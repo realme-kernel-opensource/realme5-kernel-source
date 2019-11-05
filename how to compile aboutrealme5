@@ -1,0 +1,23 @@
+realme5 baseline had 19631 and 19632 projects.19631project is realme5 without NFC,19632 is realme5 with NFC:
+ pls notice how to compile：
+dts files：dts-dirs += 19631; dts files：dts-dirs += 19632;
+config file：trinket-perf_defconfig trinket_defconfig;
+VENDOR_EDIT define 1//#ifdef VENDOR_EDIT   //need for true,VENDOR_EDIT is 1
+export PRJ_OPEN_NAME="RMX1911EX"
+export TARGET_BUILD_VERSION="US"
+export ODM_WT_EDIT=yes 
+export WT_FINAL_RELEASE=yes
+
+19631 and 19632 had differnet macro:
+dts files：dts-dirs += 19631; 
+export PROJCT="19631"
+export PRJ_NAME="MSM_19631"
+
+dts files：dts-dirs += 19632;
+export PROJCT="19632"
+export PRJ_NAME="MSM_19632"
+
+TIPS:
+VENDOR_EDIT is our RM vendor macro to distinguish RM code from  qualcomm original code.
+19631 19632 is  our internal project name for realme;
+you can try  to porting code. 
