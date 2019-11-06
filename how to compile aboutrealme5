@@ -21,3 +21,16 @@ TIPS:
 VENDOR_EDIT is our RM vendor macro to distinguish RM code from  qualcomm original code.
 19631 19632 is  our internal project name for realme;
 you can try  to porting code. 
+
+
+if had other problemes about filesystem,pls check the filesystem cancel async_discard
+such as:
+platform/vendor/qcom/trinket / fstab_non_AB_variant_ato.qti delete: async_discard
+platform/vendor/qcom/trinket / fstab_non_AB_variant_fbe.qti delete: async_discard
+
+
+if fingerprint had problems,maybe had set the fpc property: refer below:
+device/qcom/common / rootdir/etc/ueventd.qcom.rc
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq             0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 irq_enable      0660 system system
+/sys/bus/platform/devices/soc:fpc_fpc1020 wakelock_enable 0660 system system
